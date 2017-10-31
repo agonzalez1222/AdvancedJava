@@ -103,5 +103,5 @@ public class MedicalAssistant{
 				stage.show(); // Display the stage
 		
 	}
-
+ ///
 }
