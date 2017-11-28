@@ -197,7 +197,7 @@ public class MedicalAssistant{
 				
 				
 				
-				ScheduleApt.apt(scheduleApt);
+				
 
 	}
  
