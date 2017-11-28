@@ -1,13 +1,18 @@
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
@@ -101,6 +106,21 @@ public class MedicalAssistant{
 				stage.setTitle("Medical Assistant"); // Set the stage title
 				stage.setScene(scene); // Place the scene in the stage
 				stage.show(); // Display the stage
+				
+				//new scene for buttons using lambda notation
+				scheduleApt.setOnAction( e -> 
+				{
+					FlowPane f1 = new FlowPane();
+					VBox text = new VBox();
+					Label firstName = new Label("Name:");
+					TextField fName = new TextField();
+					fName.setPromptText("Please enter your name");
+					Label lastName = new Label("Last Name:");
+					TextField lName = new TextField();
+					lName.setPromptText("Please enter your last name");
+					Label desc = new Label("Describe what is going on below:");
+					
+				});
 		
 	}
  ///
