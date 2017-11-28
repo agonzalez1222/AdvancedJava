@@ -119,7 +119,13 @@ public class MedicalAssistant{
 					TextField lName = new TextField();
 					lName.setPromptText("Please enter your last name");
 					Label desc = new Label("Describe what is going on below:");
-					
+					text.getChildren().addAll(firstName, fName, lastName, lName, desc);
+					f1.getChildren().add(text);
+					Scene appt = new Scene(f1, 500, 500);
+					stage.setTitle("Appointments");
+					stage.setScene(appt);
+					stage.show();
+					stage.sizeToScene();
 				});
 		
 	}
