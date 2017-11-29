@@ -1,7 +1,11 @@
+
 import javafx.geometry.Insets;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.effect.DropShadow;
@@ -11,6 +15,7 @@ import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
@@ -60,6 +65,7 @@ public class MedicalAssistant{
 				finish = new Button("Sign Up");
 				logIn = new Button("Log In");
 				
+
 				//TextFields
 				firstName = new TextField("First Name");
 				lastName = new TextField("Last Name");
@@ -83,6 +89,13 @@ public class MedicalAssistant{
 				});
 				SavePatientHandler sph = new SavePatientHandler();
 				finish.setOnAction(sph);
+
+				logOut.setOnAction(new SignoutButtonHandler());
+				updates.setOnAction(new UpdatesWithUs());
+				contact.setOnAction(new ContactUS());
+				
+				
+
 				//Welcome text
 				welcome = new Text("Welcome, Patient");
 				welcome.setUnderline(true);
@@ -134,6 +147,7 @@ public class MedicalAssistant{
 				stage.setTitle("Medical Assistant"); // Set the stage title
 				stage.setScene(scene); // Place the scene in the stage
 				stage.show(); // Display the stage
+				
 		
 	}
  ///
