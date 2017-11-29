@@ -1,3 +1,4 @@
 John,Doe,21,email@email.com,jdoe1,password1
 Bob,Johnson,09/29/1995,whatever@ok.com,bobbyjohn,okokok111
 First Name,Last Name,Age,Email Address,bobbyJohn,Password
+First Name,Last Name,Age,Email Address,Desired Username,Password

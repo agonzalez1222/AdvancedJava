@@ -1,4 +1,3 @@
-
 import javafx.geometry.Insets;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -6,6 +5,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.effect.DropShadow;
@@ -30,17 +30,20 @@ public class MedicalAssistant{
 	final Background background = new Background(backgroundImage);
 	
 	BorderPane border;
-	Button  logIn, logOut,aboutUs, shop, updates, editProf, viewLabs, scheduleApt, doctors, contact, signUp, finish;
+	static Button  logIn, logOut,aboutUs, shop, updates, viewProf, viewLabs, scheduleApt, doctors, contact, signUp, finish, finishLogIn;
 	TextArea tf;
-	HBox hb;
-	VBox vb, vb2, signUpVBox, signUpVBox2;
+	static HBox hb;
+	static VBox vb, vb2, signUpVBox, logInVBox;
 	BorderPane centerPane;
-	Text welcome, credit, first, last, emailAddress, un, pw;
-	static TextField firstName, lastName, dob, email, username, password;
-	static Stage signUpStage;
-	Scene scene, signUpScene;
+	static Text welcome, credit, first, last, emailAddress, un, pw;
+	static TextField firstName, lastName, dob, email, username, password,enterUn;
+	static Stage signUpStage, logInStage;
+	static Scene scene, signUpScene, logInScene;
 	Image logo;
 	ImageView imv;
+	static Patient patient;
+	static PasswordField enterPw = new PasswordField();
+	
 	
 	public void createUI(Stage stage, Scene scene) {
 		//Layout
@@ -50,13 +53,14 @@ public class MedicalAssistant{
 				hb = new HBox(10); 
 				vb2 = new VBox(50);
 				centerPane = new BorderPane();
+				logInVBox = new VBox();
 				
 				//Buttons
 				logOut = new Button("Log Out");
 				aboutUs = new Button("About Us");
 				shop = new Button("Store");
 				updates = new Button("Updates");
-				editProf= new Button("Update Personal Information");
+				viewProf= new Button("View Personal Information");
 				viewLabs = new Button("View Labs");
 				scheduleApt = new Button("Schedule Appointment");
 				doctors = new Button("Doctors");
@@ -64,7 +68,7 @@ public class MedicalAssistant{
 				signUp = new Button("Sign Up");
 				finish = new Button("Sign Up");
 				logIn = new Button("Log In");
-				
+				finishLogIn = new Button("Log In");
 
 				//TextFields
 				firstName = new TextField("First Name");
@@ -73,12 +77,16 @@ public class MedicalAssistant{
 				email = new TextField("Email Address");
 				username = new TextField("Desired Username");
 				password = new TextField("Password");
+				enterUn = new TextField("Enter Username");
 				
-				//Stage 2
-				signUpStage =  new Stage();
+				enterPw.setPromptText("Enter Password");
+				
 				//Sign Up
+				signUpStage =  new Stage();
+				
 				signUpScene = new Scene(signUpVBox,300,250);
 				signUpVBox.getChildren().addAll(firstName, lastName, dob, email,username, password,finish);
+				signUpVBox.setAlignment(Pos.CENTER);
 				finish.setAlignment(Pos.CENTER);
 				signUp.setOnAction(e ->{
 					
@@ -90,17 +98,32 @@ public class MedicalAssistant{
 				SavePatientHandler sph = new SavePatientHandler();
 				finish.setOnAction(sph);
 
+				
 				logOut.setOnAction(new SignoutButtonHandler());
 				updates.setOnAction(new UpdatesWithUs());
 				contact.setOnAction(new ContactUS());
 				
+				//Log In Handlers
+				logInStage = new Stage();
+				logInScene = new Scene(logInVBox,250,200);
+				
+				enterUn.setAlignment(Pos.CENTER);
+				enterPw.setAlignment(Pos.CENTER);
+				finishLogIn.setAlignment(Pos.CENTER);
+				logInVBox.getChildren().addAll(enterUn, enterPw,finishLogIn);
+				logInVBox.setAlignment(Pos.CENTER);
+				logIn.setOnAction(e->{
+					
+					logInStage.setTitle("LOG IN");
+					logInStage.setScene(logInScene);
+					logInStage.show();
+				});
+				LogInHandler lih = new LogInHandler();
+				finishLogIn.setOnAction(lih);
+				
 				
 
-				//Welcome text
-				welcome = new Text("Welcome, Patient");
-				welcome.setUnderline(true);
-				welcome.setEffect(new DropShadow());
-				welcome.setStroke(Color.CYAN);
+				
 				
 				//credit Text
 				credit = new Text("created by Alex Croghan, Armando Gonzalez, Kyle Rutherford");
@@ -109,7 +132,7 @@ public class MedicalAssistant{
 				tf = new TextArea("Display Information Here \nThis is a rough mockup of the patient's view");
 				tf.setPrefSize(400, 250);
 				tf.setEditable(false);
-				//tf.setBackground(new Background(new BackgroundFill(Color.BLUEVIOLET, null,null)));
+				
 				
 				logo = new Image("file:images/logo.png");
 				imv = new ImageView(logo);
@@ -150,5 +173,4 @@ public class MedicalAssistant{
 				
 		
 	}
- ///
 }

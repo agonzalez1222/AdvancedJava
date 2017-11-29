@@ -12,5 +12,4 @@ public class Tester extends Application{
 		ui.createUI(stage, ui.scene);
 		
 	}
-// fksjhdgkshdflg
 }
