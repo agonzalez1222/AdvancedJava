@@ -45,10 +45,10 @@ public class MedicalAssistant{
 	public void createUI(Stage stage, Scene scene) {
 		//Layout
 				border = new BorderPane();
-				vb = new VBox(10);
+				vb = new VBox(50);
 				signUpVBox = new VBox();
 				hb = new HBox(10); 
-				vb2 = new VBox(10);
+				vb2 = new VBox(50);
 				centerPane = new BorderPane();
 				
 				//Buttons
@@ -107,14 +107,14 @@ public class MedicalAssistant{
 				
 				//TextArea Display
 				tf = new TextArea("Display Information Here \nThis is a rough mockup of the patient's view");
-				tf.setPrefSize(900, 450);
+				tf.setPrefSize(400, 250);
 				tf.setEditable(false);
 				//tf.setBackground(new Background(new BackgroundFill(Color.BLUEVIOLET, null,null)));
 				
 				logo = new Image("file:images/logo.png");
 				imv = new ImageView(logo);
 				imv.setX(100);
-				centerPane.setPrefSize(900,900);
+				centerPane.setPrefSize(300,425);
 				centerPane.setTop(imv);
 				centerPane.setCenter(tf);
 				
