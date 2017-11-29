@@ -112,26 +112,6 @@ public class MedicalAssistant{
 				stage.setScene(scene); // Place the scene in the stage
 				stage.show(); // Display the stage
 				
-				//new scene for buttons using lambda notation
-				scheduleApt.setOnAction( e -> 
-				{
-					FlowPane f1 = new FlowPane();
-					VBox text = new VBox();
-					Label firstName = new Label("Name:");
-					TextField fName = new TextField();
-					fName.setPromptText("Please enter your name");
-					Label lastName = new Label("Last Name:");
-					TextField lName = new TextField();
-					lName.setPromptText("Please enter your last name");
-					Label desc = new Label("Describe what is going on below:");
-					text.getChildren().addAll(firstName, fName, lastName, lName, desc);
-					f1.getChildren().add(text);
-					Scene appt = new Scene(f1, 500, 500);
-					stage.setTitle("Appointments");
-					stage.setScene(appt);
-					stage.show();
-					stage.sizeToScene();
-				});
 		
 	}
  ///
