@@ -56,6 +56,11 @@ public class MedicalAssistant{
 				doctors = new Button("Doctors");
 				contact = new Button("Contact Us");
 				
+				logOut.setOnAction(new SignoutButtonHandler());
+				updates.setOnAction(new UpdatesWithUs());
+				contact.setOnAction(new ContactUS());
+				
+				
 				//Welcome text
 				welcome = new Text("Welcome, Patient");
 				welcome.setUnderline(true);
