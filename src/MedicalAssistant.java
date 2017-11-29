@@ -1,11 +1,14 @@
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
@@ -22,13 +25,15 @@ public class MedicalAssistant{
 	final Background background = new Background(backgroundImage);
 	
 	BorderPane border;
-	Button logOut,aboutUs, shop, updates, editProf, viewLabs, scheduleApt, doctors, contact;
+	Button  logIn, logOut,aboutUs, shop, updates, editProf, viewLabs, scheduleApt, doctors, contact, signUp, finish;
 	TextArea tf;
 	HBox hb;
-	VBox vb, vb2;
+	VBox vb, vb2, signUpVBox, signUpVBox2;
 	BorderPane centerPane;
-	Text welcome, credit;
-	Scene scene;
+	Text welcome, credit, first, last, emailAddress, un, pw;
+	static TextField firstName, lastName, dob, email, username, password;
+	static Stage signUpStage;
+	Scene scene, signUpScene;
 	Image logo;
 	ImageView imv;
 	
@@ -36,6 +41,7 @@ public class MedicalAssistant{
 		//Layout
 				border = new BorderPane();
 				vb = new VBox(10);
+				signUpVBox = new VBox();
 				hb = new HBox(10); 
 				vb2 = new VBox(10);
 				centerPane = new BorderPane();
@@ -50,7 +56,33 @@ public class MedicalAssistant{
 				scheduleApt = new Button("Schedule Appointment");
 				doctors = new Button("Doctors");
 				contact = new Button("Contact Us");
+				signUp = new Button("Sign Up");
+				finish = new Button("Sign Up");
+				logIn = new Button("Log In");
 				
+				//TextFields
+				firstName = new TextField("First Name");
+				lastName = new TextField("Last Name");
+				dob = new TextField("Age");
+				email = new TextField("Email Address");
+				username = new TextField("Desired Username");
+				password = new TextField("Password");
+				
+				//Stage 2
+				signUpStage =  new Stage();
+				//Sign Up
+				signUpScene = new Scene(signUpVBox,300,250);
+				signUpVBox.getChildren().addAll(firstName, lastName, dob, email,username, password,finish);
+				finish.setAlignment(Pos.CENTER);
+				signUp.setOnAction(e ->{
+					
+					signUpStage.setTitle("SIGN UP");
+					signUpStage.setScene(signUpScene);
+					signUpStage.show();
+					
+				});
+				SavePatientHandler sph = new SavePatientHandler();
+				finish.setOnAction(sph);
 				//Welcome text
 				welcome = new Text("Welcome, Patient");
 				welcome.setUnderline(true);
@@ -64,6 +96,7 @@ public class MedicalAssistant{
 				tf = new TextArea("Display Information Here \nThis is a rough mockup of the patient's view");
 				tf.setPrefSize(900, 450);
 				tf.setEditable(false);
+				//tf.setBackground(new Background(new BackgroundFill(Color.BLUEVIOLET, null,null)));
 				
 				logo = new Image("file:images/logo.png");
 				imv = new ImageView(logo);
@@ -74,12 +107,12 @@ public class MedicalAssistant{
 				
 				//Add buttons to VB
 				vb.setAlignment(Pos.TOP_LEFT);
-				vb.getChildren().addAll(updates, aboutUs, shop, editProf, viewLabs, scheduleApt, doctors);
+				vb.getChildren().addAll(updates, aboutUs, shop, doctors);
 				
 				//Add Text and Button to HB
 				hb.setAlignment(Pos.BASELINE_RIGHT);
 				hb.setPrefHeight(50);
-				hb.getChildren().addAll(welcome,logOut);
+				hb.getChildren().addAll(signUp,logIn);
 				
 				//Add button to vb2
 				vb2.getChildren().add(contact);
