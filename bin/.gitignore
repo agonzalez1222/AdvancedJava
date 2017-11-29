@@ -1,8 +1,10 @@
-<<<<<<< HEAD
-/Patient.class
-/SavePatientHandler.class
-=======
 /ContactUS.class
-/UpdatesWithUs.class
->>>>>>> d77cf83448ed83e5e8fcf2e259d5f155a4f8727c
+/Customer.class
+/MedicalAssistant.class
+/Patient.class
+/Random.class
+/SavePatientHandler.class
 /SignoutButtonHandler.class
+/Tester.class
+/UpdatesWithUs.class
+/ScheduleApt.class
