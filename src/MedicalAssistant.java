@@ -37,7 +37,7 @@ public class MedicalAssistant{
 	BorderPane centerPane;
 	static Text welcome, credit, first, last, emailAddress, un, pw;
 	static TextField firstName, lastName, dob, email, username, password,enterUn;
-	static Stage signUpStage, logInStage;
+	static Stage stage,signUpStage, logInStage;
 	static Scene scene, signUpScene, logInScene;
 	Image logo;
 	ImageView imv;
@@ -164,9 +164,11 @@ public class MedicalAssistant{
 				border.setBottom(credit);
 				border.topProperty();
 				border.centerProperty();
-			
+				
 				scene = new Scene(border);
 				
+				stage.setHeight(1000);
+                stage.setWidth(1000);
 				stage.setTitle("Medical Assistant"); // Set the stage title
 				stage.setScene(scene); // Place the scene in the stage
 				stage.show(); // Display the stage

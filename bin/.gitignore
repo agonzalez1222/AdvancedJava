@@ -1,11 +1,4 @@
-/ContactUS.class
-/Customer.class
-/MedicalAssistant.class
-/Patient.class
-/Random.class
-/SavePatientHandler.class
-/SignoutButtonHandler.class
-/Tester.class
-/UpdatesWithUs.class
-/ScheduleApt.class
 /LogInHandler.class
+/SignoutButtonHandler$noButtonHandler.class
+/SignoutButtonHandler$yesButtonHandler.class
+/SignoutButtonHandler$continueButtonHandler.class
