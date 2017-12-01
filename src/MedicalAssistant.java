@@ -177,6 +177,7 @@ public class MedicalAssistant{
 				stage.setScene(scene); // Place the scene in the stage
 				stage.show(); // Display the stage
 				
-		
+		ScheduleApt.apt(scheduleApt);
+				
 	}
 }
