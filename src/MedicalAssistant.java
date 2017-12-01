@@ -20,6 +20,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -129,8 +130,11 @@ public class MedicalAssistant{
 				credit = new Text("created by Alex Croghan, Armando Gonzalez, Kyle Rutherford");
 				
 				//TextArea Display
-				tf = new TextArea("Display Information Here \nThis is a rough mockup of the patient's view");
-				tf.setPrefSize(400, 250);
+				tf = new TextArea("Welcome to AAK Medical!\n\nHere we work to give the best experience possible for all\n"
+						+ "medical needs and provide an unparralled experience. \n\n\nPlease click the contact us button to reach us or view\nour wonderfull"
+						+ " doctors by clicking the doctor button.\n\n\nWe also have updates relevant to the practice and a\nviewable store that links to several pharmacies. ");
+				tf.setPrefSize(450, 250);
+				tf.setFont(new Font(30));
 				tf.setEditable(false);
 				
 				

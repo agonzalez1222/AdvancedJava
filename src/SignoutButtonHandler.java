@@ -16,7 +16,7 @@ public class SignoutButtonHandler implements EventHandler<ActionEvent>
 	public void handle(ActionEvent event)
 	{
 		
-		Text t = new Text("Click continue to signout and close program, otherwise click the X on this box.");
+		Text t = new Text("Click continue to signout and close program, otherwise click the 'X' on this box.");
 		t.setFont(new Font(20));
 		BorderPane border = new BorderPane();
 		Stage logoutStage = new Stage();
