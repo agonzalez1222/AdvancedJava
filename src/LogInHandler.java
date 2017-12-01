@@ -39,7 +39,7 @@ public class LogInHandler implements EventHandler<ActionEvent>{
 				MedicalAssistant.hb.getChildren().removeAll(MedicalAssistant.signUp, MedicalAssistant.logIn);
 				MedicalAssistant.hb.getChildren().addAll(MedicalAssistant.welcome, MedicalAssistant.logOut);
 				
-				MedicalAssistant.vb.getChildren().addAll(MedicalAssistant.viewProf, MedicalAssistant.viewLabs, MedicalAssistant.scheduleApt);//ADD or CHANGE PATIENT VIEW BUTTONS HERE
+				MedicalAssistant.vb.getChildren().addAll( MedicalAssistant.scheduleApt);//ADD or CHANGE PATIENT VIEW BUTTONS HERE
 				loggedIn = true;
 				
 			}

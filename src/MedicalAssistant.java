@@ -31,7 +31,7 @@ public class MedicalAssistant{
 	final Background background = new Background(backgroundImage);
 	
 	BorderPane border;
-	static Button  logIn, logOut,aboutUs, shop, updates, viewProf, viewLabs, scheduleApt, doctors, contact, signUp, finish, finishLogIn;
+	static Button  logIn, logOut, shop, updates, scheduleApt, doctors, contact, signUp, finish, finishLogIn;
 	TextArea tf;
 	static HBox hb;
 	static VBox vb, vb2, signUpVBox, logInVBox;
@@ -58,11 +58,11 @@ public class MedicalAssistant{
 				
 				//Buttons
 				logOut = new Button("Log Out");
-				aboutUs = new Button("About Us");
+				//aboutUs = new Button("About Us");
 				shop = new Button("Store");
 				updates = new Button("Updates");
-				viewProf= new Button("View Personal Information");
-				viewLabs = new Button("View Labs");
+				//viewProf= new Button("View Personal Information");
+				//viewLabs = new Button("View Labs");
 				scheduleApt = new Button("Schedule Appointment");
 				doctors = new Button("Doctors");
 				contact = new Button("Contact Us");
@@ -147,7 +147,7 @@ public class MedicalAssistant{
 				
 				//Add buttons to VB
 				vb.setAlignment(Pos.TOP_LEFT);
-				vb.getChildren().addAll(updates, aboutUs, shop, doctors);
+				vb.getChildren().addAll(updates, shop, doctors);
 				
 				//Add Text and Button to HB
 				hb.setAlignment(Pos.BASELINE_RIGHT);
@@ -178,6 +178,7 @@ public class MedicalAssistant{
 				stage.show(); // Display the stage
 				
 		ScheduleApt.apt(scheduleApt);
-				
+		Store.store(shop);
+		Doctors.doc(doctors);
 	}
 }
