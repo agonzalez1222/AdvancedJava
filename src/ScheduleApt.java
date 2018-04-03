@@ -26,7 +26,7 @@ import java.util.Scanner;
 		{
 				b.setOnAction( e -> 
 			{
-				Stage stage = new Stage();
+				Stage stage = new Stage(); // Test
 				Button submit = new Button("Submit");
 				Button exit = new Button("Exit");
 				Image cross = new Image("https://image.freepik.com/free-vector/doctor-background-design_1270-62.jpg");
